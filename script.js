@@ -358,7 +358,7 @@ function drawBackgroundSky() {
     gradient.addColorStop(1, "#FFB6D9");
     gradient.addColorStop(0, "#D9A7F5");
   }
-  ...
+  
 
   // Draw sky
   ctx.fillStyle = gradient;
