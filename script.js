@@ -475,6 +475,7 @@ function drawGorilla(player) {
   ctx.translate(building.x + building.width / 2, building.height);
 
   drawGorillaBody();
+  drawPandaEars(); 
   drawGorillaLeftArm(player);
   drawGorillaRightArm(player);
   drawGorillaFace(player);
@@ -484,7 +485,7 @@ function drawGorilla(player) {
 }
 
 function drawGorillaBody() {
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "white";
 
   ctx.beginPath();
   ctx.moveTo(0, 15);
@@ -552,7 +553,7 @@ function drawGorillaRightArm(player) {
 
 function drawGorillaFace(player) {
   // Face
-  ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
+  ctx.fillStyle = "white";
   ctx.beginPath();
   ctx.arc(0, 63, 9, 0, 2 * Math.PI);
   ctx.moveTo(-3.5, 70);
@@ -560,9 +561,14 @@ function drawGorillaFace(player) {
   ctx.moveTo(+3.5, 70);
   ctx.arc(+3.5, 70, 4, 0, 2 * Math.PI);
   ctx.fill();
-
-  // Eyes
+  // Eye patches (panda black ovals)   👈 new block, added here
   ctx.fillStyle = "black";
+  ctx.beginPath();
+  ctx.ellipse(-3.5, 70, 3, 4, -0.3, 0, 2 * Math.PI);
+  ctx.ellipse(+3.5, 70, 3, 4, 0.3, 0, 2 * Math.PI);
+  ctx.fill();
+  // Eyes
+  ctx.fillStyle = "white";
   ctx.beginPath();
   ctx.arc(-3.5, 70, 1.4, 0, 2 * Math.PI);
   ctx.moveTo(+3.5, 70);
