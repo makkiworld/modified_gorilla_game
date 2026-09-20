@@ -1,14 +1,3 @@
-/*
-
-Learn how to code this game step-by-step on YouTube:
-
-https://www.youtube.com/watch?v=2q5EufbUEQk
-
-Follow me on 𝕏 for more: https://twitter.com/HunorBorbely
-
-*/
-
-// The state of the game
 let state = {};
 
 let isDragging = false;
@@ -351,14 +340,13 @@ function draw() {
 
 function drawBackgroundSky() {
   const gradient = ctx.createLinearGradient(0, 0, 0, window.innerHeight);
-   if (settings.mode === "dark") {
-    gradient.addColorStop(1, "#2E1A47");
-    gradient.addColorStop(0, "#6B2D8C");
+  if (settings.mode === "dark") {
+    gradient.addColorStop(1, "#27507F");
+    gradient.addColorStop(0, "#58A8D8");
   } else {
-    gradient.addColorStop(1, "#FFB6D9");
-    gradient.addColorStop(0, "#D9A7F5");
+    gradient.addColorStop(1, "#F8BA85");
+    gradient.addColorStop(0, "#FFC28E");
   }
-  
 
   // Draw sky
   ctx.fillStyle = gradient;
@@ -395,7 +383,7 @@ function drawBackgroundMoon() {
 
 function drawBackgroundBuildings() {
   state.backgroundBuildings.forEach((building) => {
-    ctx.fillStyle = settings.mode === "dark" ? "#4A1E4D" : "#C77DA6";
+    ctx.fillStyle = settings.mode === "dark" ? "#254D7E" : "#947285";
     ctx.fillRect(building.x, 0, building.width, building.height);
   });
 }
@@ -428,7 +416,7 @@ function drawBuildingsWithBlastHoles() {
 function drawBuildings() {
   state.buildings.forEach((building) => {
     // Draw building
-    ctx.fillStyle = settings.mode === "dark" ? "#6B1F52" : "#D9598C";
+    ctx.fillStyle = settings.mode === "dark" ? "#152A47" : "#4A3C68";
     ctx.fillRect(building.x, 0, building.width, building.height);
 
     // Draw windows
@@ -454,7 +442,7 @@ function drawBuildings() {
           const x = room * (windowWidth + gap);
           const y = floor * (windowHeight + gap);
 
-          ctx.fillStyle = settings.mode === "dark" ? "#FFD27F" : "#A8D8F0";  
+          ctx.fillStyle = settings.mode === "dark" ? "#5F76AB" : "#EBB6A2";
           ctx.fillRect(x, y, windowWidth, windowHeight);
 
           ctx.restore();
@@ -475,7 +463,6 @@ function drawGorilla(player) {
   ctx.translate(building.x + building.width / 2, building.height);
 
   drawGorillaBody();
-  drawPandaEars(); 
   drawGorillaLeftArm(player);
   drawGorillaRightArm(player);
   drawGorillaFace(player);
@@ -485,7 +472,7 @@ function drawGorilla(player) {
 }
 
 function drawGorillaBody() {
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "black";
 
   ctx.beginPath();
   ctx.moveTo(0, 15);
@@ -553,7 +540,7 @@ function drawGorillaRightArm(player) {
 
 function drawGorillaFace(player) {
   // Face
-  ctx.fillStyle = "white";
+  ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
   ctx.beginPath();
   ctx.arc(0, 63, 9, 0, 2 * Math.PI);
   ctx.moveTo(-3.5, 70);
@@ -561,14 +548,9 @@ function drawGorillaFace(player) {
   ctx.moveTo(+3.5, 70);
   ctx.arc(+3.5, 70, 4, 0, 2 * Math.PI);
   ctx.fill();
-  // Eye patches (panda black ovals)   👈 new block, added here
-  ctx.fillStyle = "black";
-  ctx.beginPath();
-  ctx.ellipse(-3.5, 70, 3, 4, -0.3, 0, 2 * Math.PI);
-  ctx.ellipse(+3.5, 70, 3, 4, 0.3, 0, 2 * Math.PI);
-  ctx.fill();
+
   // Eyes
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "black";
   ctx.beginPath();
   ctx.arc(-3.5, 70, 1.4, 0, 2 * Math.PI);
   ctx.moveTo(+3.5, 70);
