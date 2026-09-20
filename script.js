@@ -383,7 +383,7 @@ function drawBackgroundMoon() {
 
 function drawBackgroundBuildings() {
   state.backgroundBuildings.forEach((building) => {
-    ctx.fillStyle = settings.mode === "dark" ? "#254D7E" : "#947285";
+    ctx.fillStyle = settings.mode === "dark" ? "#4A1E4D" : "#C77DA6";
     ctx.fillRect(building.x, 0, building.width, building.height);
   });
 }
@@ -416,7 +416,7 @@ function drawBuildingsWithBlastHoles() {
 function drawBuildings() {
   state.buildings.forEach((building) => {
     // Draw building
-    ctx.fillStyle = settings.mode === "dark" ? "#152A47" : "#4A3C68";
+    ctx.fillStyle = settings.mode === "dark" ? "#6B1F52" : "#D9598C";
     ctx.fillRect(building.x, 0, building.width, building.height);
 
     // Draw windows
@@ -442,7 +442,7 @@ function drawBuildings() {
           const x = room * (windowWidth + gap);
           const y = floor * (windowHeight + gap);
 
-          ctx.fillStyle = settings.mode === "dark" ? "#5F76AB" : "#EBB6A2";
+          ctx.fillStyle = settings.mode === "dark" ? "#FFD27F" : "#A8D8F0";
           ctx.fillRect(x, y, windowWidth, windowHeight);
 
           ctx.restore();
