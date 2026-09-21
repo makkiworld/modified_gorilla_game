@@ -472,7 +472,7 @@ function drawGorilla(player) {
 }
 
 function drawGorillaBody() {
-  ctx.fillStyle = "black";
+   ctx.fillStyle = "#B497D6";
 
   ctx.beginPath();
   ctx.moveTo(0, 15);
@@ -540,7 +540,7 @@ function drawGorillaRightArm(player) {
 
 function drawGorillaFace(player) {
   // Face
-  ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
+ ctx.fillStyle = "#FF1493"; 
   ctx.beginPath();
   ctx.arc(0, 63, 9, 0, 2 * Math.PI);
   ctx.moveTo(-3.5, 70);
