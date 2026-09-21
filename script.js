@@ -472,7 +472,7 @@ function drawGorilla(player) {
 }
 
 function drawGorillaBody() {
-   ctx.fillStyle = "#B497D6";
+   ctx.fillStyle = "#FFC0CB";
 
   ctx.beginPath();
   ctx.moveTo(0, 15);
@@ -493,7 +493,7 @@ function drawGorillaBody() {
 }
 
 function drawGorillaLeftArm(player) {
-  ctx.strokeStyle = "black";
+  ctx.strokeStyle = "#FFC0CB";
   ctx.lineWidth = 18;
 
   ctx.beginPath();
@@ -516,7 +516,7 @@ function drawGorillaLeftArm(player) {
 }
 
 function drawGorillaRightArm(player) {
-  ctx.strokeStyle = "black";
+  ctx.strokeStyle = "#FFC0CB";
   ctx.lineWidth = 18;
 
   ctx.beginPath();
@@ -550,14 +550,14 @@ function drawGorillaFace(player) {
   ctx.fill();
 
   // Eyes
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "white";
   ctx.beginPath();
   ctx.arc(-3.5, 70, 1.4, 0, 2 * Math.PI);
   ctx.moveTo(+3.5, 70);
   ctx.arc(+3.5, 70, 1.4, 0, 2 * Math.PI);
   ctx.fill();
 
-  ctx.strokeStyle = "black";
+  ctx.strokeStyle = "white";
   ctx.lineWidth = 1.4;
 
   // Nose
