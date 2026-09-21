@@ -743,7 +743,7 @@ function computerThrow() {
   draw();
 
   // Make it look like the computer is thinking for a second
-  delayTimeoutID = setTimeout(throwBomb, 1000);
+  delayTimeoutID = setTimeout(throwBomb, 400);
 }
 
 // Simulate multiple throws and pick the best
@@ -876,7 +876,7 @@ function moveBomb(elapsedTime) {
   state.bomb.velocity.x += state.windSpeed * multiplier;
 
   // Adjust trajectory by gravity
-  state.bomb.velocity.y -= 20 * multiplier;
+  state.bomb.velocity.y -= 32 * multiplier;  
 
   // Calculate new position
   state.bomb.x += state.bomb.velocity.x * multiplier;
@@ -1010,7 +1010,7 @@ function generateWindSpeed() {
 }
 
 function setWindMillRotation() {
-  const rotationSpeed = Math.abs(50 / state.windSpeed);
+  const rotationSpeed = Math.abs(30 / state.windSpeed);
   windmillHeadDOM.style.animationDirection =
     state.windSpeed > 0 ? "normal" : "reverse";
   windmillHeadDOM.style.animationDuration = `${rotationSpeed}s`;
